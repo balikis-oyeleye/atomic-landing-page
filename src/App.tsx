@@ -1,5 +1,11 @@
+import Navbar from "./components/navbar";
+
 function App() {
-  return <h1 className="text-9xl text-red-950 bg-green-700">toyora</h1>;
+  return (
+    <div className="bg-main pt-8 h-screen">
+      <Navbar />
+    </div>
+  );
 }
 
 export default App;
