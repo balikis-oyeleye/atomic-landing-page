@@ -26,6 +26,12 @@ export default {
       },
     },
     extend: {
+      boxShadow: {
+        "custom-shadow": "0 20px 35px 0 rgba(221, 255, 0, 0.2)",
+      },
+      backgroundImage: {
+        "custom-gradient": "linear-gradient(200deg, #FFFFF7 9%, #727267 100%)",
+      },
       backdropBlur: {
         10: "10px",
       },
