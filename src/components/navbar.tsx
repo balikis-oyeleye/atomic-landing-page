@@ -5,7 +5,7 @@ const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 w-full px-5 md:px-10 lg:px-[60px] ">
+    <header className="sticky top-0 w-full px-5 md:px-10 lg:px-[64px]">
       <div className="flex items-center justify-between">
         <a href="/">
           <img
@@ -44,8 +44,8 @@ const Navbar = () => {
       </div>
 
       {isOpen && (
-        <nav className="nav py-6 px-8 md:hidden mt-2">
-          <ul className="flex flex-col gap-6 items-center">
+        <nav className="nav md:hidden absolute w-full left-1/2 -translate-x-1/2 max-w-[90%] mt-2">
+          <ul className="flex flex-col gap-6 items-center w-full py-10 px-8">
             <li className="nav-link">
               <a href="#benefits">Features</a>
             </li>
