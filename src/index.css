@@ -1,3 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .nav {
+    @apply border border-border rounded-[50px] bg-[#17171799] backdrop-blur-10;
+  }
+  .nav-link {
+    @apply text-[#7A7A7A] hover:text-primary transition-colors duration-300 font-inter text-base font-normal;
+  }
+
+  .nav-cta {
+    @apply border-border border py-4 px-8 rounded-[50px] text-primary font-medium text-base leading-5 hover:border-primary transition-colors duration-300 bg-[#17171799] backdrop-blur-10 hidden md:block;
+  }
+
+  .nav-btn {
+    @apply border-border border py-3 px-4 rounded-[50px] bg-[#17171799] backdrop-blur-10 md:hidden font-poppins;
+  }
+}
