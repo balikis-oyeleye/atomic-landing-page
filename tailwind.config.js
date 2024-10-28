@@ -2,18 +2,58 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {
+    screens: {
+      xs: "320px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+      "3xl": "1920px",
+      "4k": "2560px",
+    },
+    container: {
+      center: true,
+      padding: "1rem",
       screens: {
-        xs: "320px", // Extra small devices (mobile phones)
-        sm: "640px", // Small devices (landscape phones)
-        md: "768px", // Medium devices (tablets)
-        lg: "1024px", // Large devices (desktops)
-        xl: "1280px", // Extra large devices (large desktops)
-        "2xl": "1536px", // 2X large devices (larger desktops)
-        "3xl": "1920px", // Custom 3X large (full HD screens)
-        "4k": "2560px", // Custom 4K large screens
+        xs: "100%",
+        sm: "100%",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1536px",
+        "3xl": "1920px",
+      },
+    },
+    extend: {
+      backdropBlur: {
+        10: "10px",
+      },
+      fontFamily: {
+        poppins: ["Poppins", "serif"],
+        inter: ["Inter", "sans-serif"],
+      },
+      fontWeight: {
+        thin: "100",
+        extralight: "200",
+        light: "300",
+        normal: "400",
+        medium: "500",
+        semibold: "600",
+        bold: "700",
+        extrabold: "800",
+        black: "900",
+      },
+      fontStyle: {
+        normal: "normal",
+        italic: "italic",
+      },
+      colors: {
+        main: "#0d0d0d",
+        border: "#262626",
+        primary: "#ccc",
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-filters")],
 };
