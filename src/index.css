@@ -7,8 +7,8 @@
 @tailwind utilities;
 
 html {
-  scrollbar-color: #888888 #0d0d0d;
-  scrollbar-width: thin;
+  scrollbar-color: #666 #0d0d0d;
+  /* scrollbar-width: thin; */
   scrollbar-arrow-color: #0d0d0d;
 }
 
