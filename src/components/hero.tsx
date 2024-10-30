@@ -1,7 +1,7 @@
 const Hero = () => {
   return (
-    <section className="container h-[888px]">
-      <div className="mt-20 sm:mt-[112px] ">
+    <section className="px-5 md:px-10 lg:px-[64px] py-0 md:py-[60px] relative overflow-hidden">
+      <div className="mt-20 sm:mt-[112px]">
         <h1 className="hero-heading">
           Design work,
           <br /> the efficient way
@@ -24,6 +24,23 @@ const Hero = () => {
             Get notified
           </button>
         </form>
+      </div>
+
+      <div className="absolute bottom-0 top-0 h-full w-full pointer-events-none z-10 hidden 2xl:block">
+        <div className="bg-dark-shadow h-full"></div>
+      </div>
+
+      <div className="mt-11 2xl:mt-20 md:flex justify-center hidden">
+        <div className="">
+          <p className="text-[#7A7A7A] font-inter text-base font-light">
+            Nur Praditya
+          </p>
+          <img
+            src="/public/assets/images/nur.png"
+            alt=""
+            className="w-64 h-auto"
+          />
+        </div>
       </div>
     </section>
   );
