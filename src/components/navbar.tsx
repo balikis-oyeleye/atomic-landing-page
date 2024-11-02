@@ -5,7 +5,7 @@ const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 w-full px-5 md:px-10 lg:px-[64px] z-50">
+    <header className="sticky top-0 w-full px-5 md:px-10 lg:px-[64px] z-50 py-8">
       <div className="flex items-center justify-between">
         <a href="/">
           <img
