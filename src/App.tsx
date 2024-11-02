@@ -3,7 +3,7 @@ import Navbar from "./components/navbar";
 
 function App() {
   return (
-    <div className="bg-main pt-8">
+    <div className="bg-main">
       <Navbar />
       <main>
         <Hero />
