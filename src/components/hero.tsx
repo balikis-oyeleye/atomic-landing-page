@@ -42,7 +42,7 @@ const Hero = () => {
               Nur Praditya
             </p>
             <img
-              src="/public/assets/images/nur.png"
+              src="/assets/images/nur.png"
               alt=""
               className="w-64 h-auto object-contain"
             />
