@@ -8,8 +8,10 @@
 
 html {
   scrollbar-color: #666 #0d0d0d;
-  /* scrollbar-width: thin; */
+  scrollbar-width: thin;
   scrollbar-arrow-color: #0d0d0d;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Adjust the offset as needed */
 }
 
 @layer components {
