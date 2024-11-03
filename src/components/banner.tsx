@@ -1,38 +1,54 @@
 import React from "react";
+import Shopify from "../icons/shopify.svg?react";
+import Pinterest from "../icons/pinterest.svg?react";
+import Duolingo from "../icons/duolingo.svg?react";
+import M from "../icons/m.svg?react";
+import Morgan from "../icons/morgan.svg?react";
+import Revolut from "../icons/revolut.svg?react";
+import Headspace from "../icons/headspace.svg?react";
+import Volvo from "../icons/volvo.svg?react";
 
 const Banner: React.FC = () => {
-  const companiesLogos = [
+  const logos = [
     {
-      name: "pinterest",
-      img: "/assets/images/pinterest.png",
+      name: "Shopify",
+      icon: Shopify,
+      size: "min-w-28",
     },
     {
-      name: "duolingo",
-      img: "/assets/images/duolingo.png",
+      name: "Pinterest",
+      icon: Pinterest,
+      size: "min-w-28",
     },
     {
-      name: "m",
-      img: "/assets/images/m.png",
+      name: "Duolingo",
+      icon: Duolingo,
+      size: "min-w-28",
     },
     {
-      name: "morgan",
-      img: "/assets/images/morgan.png",
+      name: "M",
+      icon: M,
+      size: "min-w-20",
     },
     {
-      name: "revolut",
-      img: "/assets/images/revolut.png",
+      name: "Morgan",
+      icon: Morgan,
+      size: "min-w-28",
     },
     {
-      name: "headspace",
-      img: "/assets/images/headspace.png",
+      name: "Revolut",
+      icon: Revolut,
+      size: "min-w-28",
     },
     {
-      name: "shopify",
-      img: "/assets/images/shopify.png",
+      name: "Headspace",
+      icon: Headspace,
+      size: "min-w-28",
     },
     {
-      name: "volvo",
-      img: "/assets/images/volvo.png",
+      name: "Volvo",
+      icon: Volvo,
+      size: "min-w-20",
     },
   ];
 
@@ -41,24 +57,14 @@ const Banner: React.FC = () => {
       <h2 className="font-inter text-[#7D7F78] tracking-tight leading-6 text-center text-xl font-normal">
         Already chosen by the leaders
       </h2>
-      <div className="flex gap-4 items-center mt-8 justify-center">
-        <div className="flex overflow-x-auto gap-6">
-          {companiesLogos.map((company, index) => (
-            <figure
-              key={index}
-              className="min-w-[160px] h-auto m-auto"
-              role="listitem"
-            >
-              <img
-                src={company.img}
-                alt={`${company.name} logo`}
-                className="w-full h-full object-contain"
-                loading="lazy"
-              />
-              <figcaption className="sr-only">{company.name}</figcaption>
-            </figure>
+      <div className="flex items-center mt-8 justify-center">
+        <ul className="flex overflow-x-auto gap-6 items-center">
+          {logos.map((company, index) => (
+            <li key={index} className={`max-h-max ${company.size}`}>
+              <company.icon className="w-full h-full object-contain" />
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );
