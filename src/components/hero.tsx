@@ -1,6 +1,9 @@
 const Hero = () => {
   return (
-    <section className="px-5 md:px-10 lg:px-[64px] py-0 md:pt-[70px] md:pb-[120px] relative overflow-hidden">
+    <section
+      id="hero"
+      className="px-5 md:px-10 lg:px-[64px] py-0 md:pt-[70px] md:pb-[120px] relative overflow-hidden"
+    >
       <div className="mt-12 sm:mt-[60px]">
         <h1 className="hero-heading">
           Design work,
