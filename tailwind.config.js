@@ -31,8 +31,12 @@ export default {
       },
       backgroundImage: {
         "custom-gradient": "linear-gradient(200deg, #FFFFF7 9%, #727267 100%)",
+        "custom-gradient-text":
+          "linear-gradient(145deg, #FFFFF7 0%, rgba(255, 255, 247, 0.34) 100%)",
         "dark-shadow":
           "linear-gradient(180deg, rgba(13, 13, 13, 0) 75%, rgba(13, 13, 13, 1) 95%)",
+        "custom-box-gradient":
+          "linear-gradient(to bottom, #1E1E1E 0%, #141414 100%)",
       },
       backdropBlur: {
         10: "10px",
