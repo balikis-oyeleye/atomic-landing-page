@@ -1,6 +1,7 @@
 import Banner from "./components/banner";
 import Features from "./components/features";
 import Hero from "./components/hero";
+import HowItWorks from "./components/how-it-works";
 import Introduction from "./components/introduction";
 import Navbar from "./components/navbar";
 
@@ -13,6 +14,7 @@ function App() {
         <Banner />
         <Introduction />
         <Features />
+        <HowItWorks />
       </main>
     </div>
   );

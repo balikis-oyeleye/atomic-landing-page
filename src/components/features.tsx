@@ -38,7 +38,7 @@ const Features = () => {
   ];
 
   return (
-    <section id="features" className="container pb-[80px] overflow-hidden">
+    <section id="features" className="container pb-[90px] overflow-hidden">
       <div className="flex items-center justify-center gap-2">
         <Swril />
         <h2 className="text-[#DDFF00] font-medium font-inter text-lg">
