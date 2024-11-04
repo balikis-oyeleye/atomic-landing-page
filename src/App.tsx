@@ -4,6 +4,7 @@ import Hero from "./components/hero";
 import HowItWorks from "./components/how-it-works";
 import Introduction from "./components/introduction";
 import Navbar from "./components/navbar";
+import Testimonials from "./components/testimonials";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Introduction />
         <Features />
         <HowItWorks />
+        <Testimonials />
       </main>
     </div>
   );
