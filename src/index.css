@@ -42,3 +42,7 @@ html {
     @apply bg-[#DDFF00] rounded-[50px] py-[14.5px] px-[16px] sm:px-[28px] text-[#0D0D0D] font-poppins text-xs sm:text-[15px] font-medium shadow-custom-shadow text-nowrap;
   }
 }
+
+.inline-border {
+  border-inline: 1px solid #666;
+}
