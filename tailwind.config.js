@@ -21,8 +21,6 @@ export default {
         md: "768px",
         lg: "1024px",
         xl: "1280px",
-        "2xl": "1536px",
-        "3xl": "1920px",
       },
     },
     extend: {
@@ -64,6 +62,8 @@ export default {
         main: "#0d0d0d",
         border: "#262626",
         primary: "#ccc",
+        yellow: "#DDFF00",
+        silver: "#C0C0C0",
       },
     },
   },
