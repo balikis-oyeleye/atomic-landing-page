@@ -1,50 +1,56 @@
-# React + TypeScript + Vite
+# **Atomic – Creative Business Landing Page**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Atomic Preview](/)
 
-Currently, two official plugins are available:
+Atomic is a modern and creative business landing page designed to help businesses showcase their services, attract clients, and grow their brands. Built with cutting-edge web technologies, Atomic offers a seamless user experience and a sleek design tailored for creative professionals and businesses.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## **Table of Contents**
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Folder Structure](#folder-structure)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## **Features**
+- 🚀 **Responsive Design**: Optimized for all screen sizes, including mobile, tablet, and desktop.
+- 🎨 **Modern UI/UX**: Sleek and user-friendly interface.
+- 🌟 **SEO Optimized**: Enhanced meta tags and structured data for better search engine rankings.
+- 🌐 **Cross-Browser Compatible**: Works seamlessly across major browsers.
+- 🔥 **Customizable Components**: Easily adapt the design to fit your brand.
+- 📄 **PWA Support**: Includes a manifest file for Progressive Web App functionality.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+---
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## **Technologies Used**
+- **Frontend**:  
+  - HTML5, CSS3, TypeScript  
+  - React.js / React Native
+- **Build Tools**:  
+  - Vite.js
+- **Styling**:  
+  - Tailwind CSS
+- **Icons and Fonts**:  
+  - Font Awesome, Google Fonts
+- **Other Tools**:  
+  - React Router, Zustand for state management (if applicable)
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+---
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## **Installation**
+
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn package manager
+
+### Steps
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/YourUsername/atomic-landing-page.git
+   cd atomic-landing-page
