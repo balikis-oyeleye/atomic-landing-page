@@ -51,11 +51,11 @@ const Features = () => {
         </span>
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-14 max-w-[1280px] mx-auto">
-        <div className="w-full bg-custom-box-gradient rounded-[30px] p-10 border  border-[#262626]">
-          <div className="w-[280px] h-[211px] mx-auto">
+        <div className="w-full bg-custom-box-gradient rounded-[30px] pt-2 pb-6 xs:p-10 border  border-[#262626]">
+          <div className="xs:w-[280px] h-[211px] mx-auto px-2">
             <Growth className="h-full w-full object-contain" />
           </div>
-          <div className="mt-6">
+          <div className="mt-6 px-4 sm:px-0">
             <h3 className="font-poppins text-primary text-[22px]">
               Cost effective solution
             </h3>
@@ -64,11 +64,11 @@ const Features = () => {
             </p>
           </div>
         </div>
-        <div className="w-full bg-custom-box-gradient rounded-[30px] p-10 border  border-[#262626]">
-          <div className="w-[280px] h-[211px] mx-auto">
+        <div className="w-full bg-custom-box-gradient rounded-[30px] pt-2 pb-6 xs:p-10  border  border-[#262626]">
+          <div className="xs:w-[280px] h-[211px] mx-auto px-2">
             <LatestDesign className="h-full w-full object-contain" />
           </div>
-          <div className="mt-6">
+          <div className="mt-6 px-4 sm:px-0">
             <h3 className="font-poppins text-primary text-[22px]">
               Tailor–made design
             </h3>
@@ -77,11 +77,11 @@ const Features = () => {
             </p>
           </div>
         </div>
-        <div className="w-full bg-custom-box-gradient rounded-[30px] border  border-[#262626]">
+        <div className="w-full bg-custom-box-gradient rounded-[30px] border border-[#262626]">
           <div className="w-[280px] h-[211px] mx-auto">
             <LineGraph className="h-full w-full object-contain" />
           </div>
-          <div className="mt-16 px-10 pb-10 md:pb-0">
+          <div className="mt-16 px-4 xs:px-10 pb-10 md:pb-0">
             <h3 className="font-poppins text-primary text-[22px]">
               Scalable as you grow
             </h3>
@@ -94,10 +94,10 @@ const Features = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-[60px] max-w-[1280px] mx-auto">
         <div className="w-full bg-custom-box-gradient rounded-[30px] p-10 pr-0 xl:flex xl:flex-row-reverse xl:items-center border  border-[#262626]">
-          <div className="h-[173px] w-[282px] ml-auto min-w-max">
+          <div className="h-[173px] xs:w-[282px] xs:ml-auto xs:min-w-max">
             <SocialMedia className="h-full w-full object-contain" />
           </div>
-          <div className="mt-16 md:mt-6  xl:max-w-[224px]">
+          <div className="mt-16 md:mt-6 xl:max-w-[224px]">
             <h3 className="font-poppins text-primary text-[22px] xl:text-[26px] max-w-[180px] md:max-w-full ">
               Workflow integration
             </h3>
