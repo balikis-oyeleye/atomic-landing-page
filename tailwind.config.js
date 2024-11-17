@@ -3,7 +3,7 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     screens: {
-      xs: "320px",
+      xs: "360px",
       sm: "640px",
       md: "768px",
       lg: "1024px",
@@ -35,6 +35,8 @@ export default {
           "linear-gradient(180deg, rgba(13, 13, 13, 0) 75%, rgba(13, 13, 13, 1) 95%)",
         "custom-box-gradient":
           "linear-gradient(to bottom, #1E1E1E 0%, #141414 100%)",
+        "cta-gradient":
+          "linear-gradient(140.06451559643327deg, #1a1a1a 0%, #0d0d0d 100%)",
       },
       backdropBlur: {
         10: "10px",
