@@ -47,18 +47,20 @@ const Navbar = () => {
         <nav className="nav md:hidden absolute w-full left-1/2 -translate-x-1/2 max-w-[90%] mt-2">
           <ul className="flex flex-col gap-6 items-center w-full py-10 px-8">
             <li className="nav-link">
-              <a href="#features">Features</a>
+              <a href="#features" onClick={() => setOpen(false)}>
+                Features
+              </a>
             </li>
-            <li className="nav-link">
+            <li className="nav-link" onClick={() => setOpen(false)}>
               <a href="#how-it-works">How it works</a>
             </li>
-            <li className="nav-link">
+            <li className="nav-link" onClick={() => setOpen(false)}>
               <a href="#testimonials">Testimonials</a>
             </li>
-            <li className="nav-link">
+            <li className="nav-link" onClick={() => setOpen(false)}>
               <a href="#faqs">FAQs</a>
             </li>
-            <li className="nav-link">
+            <li className="nav-link" onClick={() => setOpen(false)}>
               <a href="#cta" className="nav-link">
                 Notify me
               </a>
