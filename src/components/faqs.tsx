@@ -97,7 +97,7 @@ const FAQs = () => {
         ))}
       </div>
 
-      <p className="text-center mt-8 text-[#7A7A7A] text-base">
+      <p className="mt-8 text-[#7A7A7A] text-base text-start md:text-center">
         <span>Still have more questions? Contact our</span>
         <a href="#" className="text-primary ml-1">
           help center.
