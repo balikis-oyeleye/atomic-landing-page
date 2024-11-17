@@ -1,6 +1,8 @@
 import Banner from "./components/banner";
+import Cta from "./components/cta";
 import FAQs from "./components/faqs";
 import Features from "./components/features";
+import Footer from "./components/footer";
 import Hero from "./components/hero";
 import HowItWorks from "./components/how-it-works";
 import Introduction from "./components/introduction";
@@ -21,6 +23,8 @@ function App() {
         <Testimonials />
         <Metrics />
         <FAQs />
+        <Cta />
+        <Footer />
       </main>
     </div>
   );
