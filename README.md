@@ -1,6 +1,6 @@
 # **Atomic – Creative Business Landing Page**
 
-![Atomic Preview](https://github.com/balikis-oyeleye/atomic-landing-page/blob/main/public/assets/img.png)
+![Atomic Preview](/public/assets/img.png)
 
 Atomic is a modern and creative business landing page designed to help businesses showcase their services, attract clients, and grow their brands.
 
