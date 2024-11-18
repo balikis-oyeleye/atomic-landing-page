@@ -51,11 +51,12 @@ const Features = () => {
         </span>
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-14 max-w-[1280px] mx-auto">
-        <div className="w-full bg-custom-box-gradient rounded-[30px] pt-2 pb-6 xs:p-10 border  border-[#262626]">
+        {/*  */}
+        <div className="w-full bg-custom-box-gradient rounded-[30px] pt-2 pb-6  border border-[#262626] overflow-hidden">
           <div className="xs:w-[280px] h-[211px] mx-auto px-2">
-            <Growth className="h-full w-full object-contain" />
+            <Growth className="h-full w-full object-cover" />
           </div>
-          <div className="mt-6 px-4 sm:px-0">
+          <div className="mt-6 px-4 sm:px-10">
             <h3 className="font-poppins text-primary text-[22px]">
               Cost effective solution
             </h3>
@@ -64,11 +65,12 @@ const Features = () => {
             </p>
           </div>
         </div>
-        <div className="w-full bg-custom-box-gradient rounded-[30px] pt-2 pb-6 xs:p-10  border  border-[#262626]">
+        {/*  */}
+        <div className="w-full bg-custom-box-gradient rounded-[30px] pt-2 pb-6   border  border-[#262626] overflow-hidden">
           <div className="xs:w-[280px] h-[211px] mx-auto px-2">
             <LatestDesign className="h-full w-full object-contain" />
           </div>
-          <div className="mt-6 px-4 sm:px-0">
+          <div className="mt-6 px-4 sm:px-10">
             <h3 className="font-poppins text-primary text-[22px]">
               Tailor–made design
             </h3>
@@ -77,11 +79,11 @@ const Features = () => {
             </p>
           </div>
         </div>
-        <div className="w-full bg-custom-box-gradient rounded-[30px] border border-[#262626]">
+        <div className="w-full bg-custom-box-gradient rounded-[30px] border border-[#262626] overflow-hidden">
           <div className="w-[280px] h-[211px] mx-auto">
             <LineGraph className="h-full w-full object-contain" />
           </div>
-          <div className="mt-16 px-4 xs:px-10 pb-10 md:pb-0">
+          <div className="mt-16 px-4 sm:px-10 pb-10 md:pb-0">
             <h3 className="font-poppins text-primary text-[22px]">
               Scalable as you grow
             </h3>
@@ -93,11 +95,11 @@ const Features = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-[60px] max-w-[1280px] mx-auto">
-        <div className="w-full bg-custom-box-gradient rounded-[30px] p-10 pr-0 xl:flex xl:flex-row-reverse xl:items-center border  border-[#262626]">
+        <div className="w-full bg-custom-box-gradient rounded-[30px] pt-2 pb-6  sm:p-10 pr-0 xl:flex xl:flex-row-reverse xl:items-center border  border-[#262626]">
           <div className="h-[173px] xs:w-[282px] xs:ml-auto xs:min-w-max">
             <SocialMedia className="h-full w-full object-contain" />
           </div>
-          <div className="mt-16 md:mt-6 xl:max-w-[224px]">
+          <div className="mt-16 md:mt-6 xl:max-w-[224px] px-4 sm:px-0">
             <h3 className="font-poppins text-primary text-[22px] xl:text-[26px] max-w-[180px] md:max-w-full ">
               Workflow integration
             </h3>
@@ -106,8 +108,8 @@ const Features = () => {
             </p>
           </div>
         </div>
-        <div className="w-full bg-custom-box-gradient rounded-[30px] p-10 pr-0 xl:pr-10 xl:flex xl:flex-row-reverse xl:items-center xl:gap-10 border  border-[#262626]">
-          <div className="flex-1 h-[173px] xl:h-max">
+        <div className="w-full bg-custom-box-gradient rounded-[30px] pb-4 sm:p-10 pr-0 xl:pr-10 xl:flex xl:flex-row-reverse xl:items-center xl:gap-10 border  border-[#262626]">
+          <div className="flex-1 h-[173px] xl:h-max p-10 sm:p-0">
             <ul className="flex items-center flex-row-reverse w-max relative">
               {avatars.map((avatar) => (
                 <li
@@ -121,6 +123,7 @@ const Features = () => {
                         src={avatar.image}
                         alt={`${avatar.position} avatar`}
                         className="object-cover h-full w-full"
+                        loading="lazy"
                       />
                     ) : (
                       <div />
@@ -131,7 +134,7 @@ const Features = () => {
               <EliahIcon className="absolute -bottom-28 -right-20" />
             </ul>
           </div>
-          <div className="md:mt-6 xl:max-w-[224px]">
+          <div className="md:mt-6 xl:max-w-[224px] px-4 sm:px-0">
             <h3 className="font-poppins text-primary text-[22px] xl:text-[26px] max-w-[180px] md:max-w-full ">
               Collaborate real-time
             </h3>

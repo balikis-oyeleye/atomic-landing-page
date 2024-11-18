@@ -10,8 +10,10 @@ html {
   scrollbar-color: #666 #0d0d0d;
   scrollbar-arrow-color: #0d0d0d;
   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
   scroll-padding-top: 90px;
   scrollbar-arrow-color: #0d0d0d;
+  will-change: transform;
 }
 
 @layer components {

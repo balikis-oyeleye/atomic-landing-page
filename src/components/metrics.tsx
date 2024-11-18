@@ -47,6 +47,7 @@ const Metrics = () => {
                 src={metric.img}
                 alt={metric.name}
                 className="w-auto h-[33px]"
+                loading="lazy"
               />
               <blockquote className="text-[#7A7A7A] text-base font-inter md:max-w-[360px] leading-tight text-center min-h-[80px]">
                 "{metric.text}"
