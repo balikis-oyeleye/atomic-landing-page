@@ -27,10 +27,10 @@ const Testimonials = () => {
             <IoArrowForwardCircleOutline size={32} />
           </a>
         </div>
-        <div className="md:max-w-[614px] mx-auto relative">
+        <div className="md:max-w-[614px] max-h-[430px] mx-auto relative">
           <img
-            src="/public/assets/images/man.png"
-            className="rounded-3xl w-full h-full object-center"
+            src="/assets/images/man.png"
+            className="rounded-3xl  w-full h-full object-center"
             loading="lazy"
           />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80px] h-[80px] bg-black/55 flex items-center justify-center rounded-full cursor-pointer">
