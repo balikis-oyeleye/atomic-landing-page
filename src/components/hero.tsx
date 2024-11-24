@@ -1,3 +1,5 @@
+import { motion } from "motion/react";
+
 const Hero = () => {
   return (
     <section
@@ -5,17 +7,32 @@ const Hero = () => {
       className="px-5 md:px-10 lg:px-[64px] py-0 md:pt-[60px] md:pb-[120px] relative overflow-hidden"
     >
       <div className="mt-12 sm:mt-[60px]">
-        <h1 className="hero-heading">
+        <motion.h1
+          initial={{ scale: 0, y: 50 }}
+          animate={{ scale: 1, y: 0, transition: { duration: 1.2 } }}
+          className="hero-heading"
+        >
           Design work,
           <br /> the efficient way
-        </h1>
-        <p className="md:max-w-[391.59px] font-inter text-base mx-auto text-center text-[#7D7F78] xl:tracking-normal mt-8">
-          Innovative design solutions for technology firms and emerging
-          businesses weary of the typical aesthetic methodology. Arriving
-          shortly.
-        </p>
-        <form
-          className="rounded-[50px] p-[10px] border-border border flex items-center mt-8 max-w-[391.59px] mx-auto gap-2 "
+        </motion.h1>
+        <div className="overflow-hidden">
+          <motion.p
+            initial={{ y: 50 }}
+            animate={{ y: 0, transition: { duration: 1.3 } }}
+            className="md:max-w-[391.59px] font-inter text-base mx-auto text-center text-[#7D7F78] xl:tracking-normal mt-8 overflow-hidden"
+          >
+            Innovative design solutions for technology firms and emerging
+            businesses weary of the typical aesthetic methodology. Arriving
+            shortly.
+          </motion.p>
+        </div>
+        <motion.form
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: 1,
+            transition: { duration: 1, delay: 0.8 },
+          }}
+          className="rounded-[50px] p-[10px] border-border border flex items-center mt-8 max-w-[391.59px] mx-auto gap-2 z-10"
           onSubmit={(e) => e.preventDefault()}
         >
           <input
@@ -26,7 +43,7 @@ const Hero = () => {
           <button type="submit" className="hero-form-btn">
             Get notified
           </button>
-        </form>
+        </motion.form>
       </div>
 
       <div className="absolute bottom-0 top-0 h-full w-full pointer-events-none z-10 hidden 2xl:block">
@@ -50,7 +67,15 @@ const Hero = () => {
         </div>
 
         {/* Sugar */}
-        <div className="absolute bottom-7 left-[30px] rounded-2xl overflow-hidden 2xl:bottom-[100px] 2xl:left-[160px] hidden md:block">
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          animate={{
+            y: 0,
+            opacity: 1,
+            transition: { duration: 1, delay: 0.4 },
+          }}
+          className="absolute bottom-7 left-[30px] rounded-2xl overflow-hidden 2xl:bottom-[100px] 2xl:left-[160px] hidden md:block"
+        >
           <img
             src="/assets/images/sugar.png"
             alt=""
@@ -58,10 +83,18 @@ const Hero = () => {
             width={200}
             className="object-contain"
           />
-        </div>
+        </motion.div>
 
         {/* Thomas  */}
-        <div className="absolute bottom-7 right-[18px] rounded-2xl overflow-hidden 2xl:bottom-[100px] 2xl:right-[160px] hidden md:block">
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          animate={{
+            y: 0,
+            opacity: 1,
+            transition: { duration: 1, delay: 0.6 },
+          }}
+          className="absolute bottom-7 right-[18px] rounded-2xl overflow-hidden 2xl:bottom-[100px] 2xl:right-[160px] hidden md:block"
+        >
           <div className="relative">
             <img
               src="/assets/images/thomas.png"
@@ -73,10 +106,18 @@ const Hero = () => {
               Thomas Cullen
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Vlad */}
-        <div className="absolute -left-10 rounded-2xl top-[30%]  overflow-hidden 2xl:left-[80px] hidden md:block">
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          animate={{
+            y: 0,
+            opacity: 1,
+            transition: { duration: 1, delay: 0.2 },
+          }}
+          className="absolute -left-10 rounded-2xl top-[30%]  overflow-hidden 2xl:left-[80px] hidden md:block"
+        >
           <div className="flex flex-col gap-1">
             <img
               src="/assets/images/vlad.avif"
@@ -89,10 +130,18 @@ const Hero = () => {
               Vlad Muslakov
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Aryan  */}
-        <div className="absolute -right-16 rounded-2xl top-[30%]  overflow-hidden 2xl:right-[80px] hidden md:block">
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          animate={{
+            y: 0,
+            opacity: 1,
+            transition: { duration: 1, delay: 0.8 },
+          }}
+          className="absolute -right-16 rounded-2xl top-[30%]  overflow-hidden 2xl:right-[80px] hidden md:block"
+        >
           <div className="relative">
             <img
               src="/assets/images/aryan.avif"
@@ -105,10 +154,18 @@ const Hero = () => {
               Aryan Shah
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Sarah */}
-        <div className="absolute left-10 rounded-2xl top-[20%] overflow-hidden 2xl:left-[350px] 2xl:top-[40%] hidden md:block">
+        <motion.div
+          initial={{ x: -50, opacity: 0 }}
+          animate={{
+            x: 0,
+            opacity: 1,
+            transition: { duration: 1, delay: 0.8 },
+          }}
+          className="absolute left-10 rounded-2xl top-[20%] overflow-hidden 2xl:left-[350px] 2xl:top-[40%] hidden md:block"
+        >
           <img
             src="/assets/images/sarah.png"
             alt=""
@@ -116,10 +173,18 @@ const Hero = () => {
             width={95}
             className="object-contain"
           />
-        </div>
+        </motion.div>
 
         {/* Eliah */}
-        <div className="absolute right-10 rounded-2xl top-[20%] overflow-hidden 2xl:right-[400px] 2xl:top-[30%] hidden md:block">
+        <motion.div
+          initial={{ x: 50, opacity: 0 }}
+          animate={{
+            x: 0,
+            opacity: 1,
+            transition: { duration: 1, delay: 0.8 },
+          }}
+          className="absolute right-10 rounded-2xl top-[20%] overflow-hidden 2xl:right-[400px] 2xl:top-[30%] hidden md:block"
+        >
           <img
             src="/assets/images/eliah.png"
             alt=""
@@ -127,7 +192,7 @@ const Hero = () => {
             width={95}
             className="object-contain"
           />
-        </div>
+        </motion.div>
       </>
 
       {/* Slides for tablet screen */}
