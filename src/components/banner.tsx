@@ -7,6 +7,7 @@ import Morgan from "../icons/morgan.svg?react";
 import Revolut from "../icons/revolut.svg?react";
 import Headspace from "../icons/headspace.svg?react";
 import Volvo from "../icons/volvo.svg?react";
+import { motion } from "motion/react";
 
 const Banner: React.FC = () => {
   const logos = [
@@ -53,18 +54,44 @@ const Banner: React.FC = () => {
   ];
 
   return (
-    <section className="container py-14" aria-labelledby="company-banner">
+    <section
+      className="py-14 overflow-hidden max-w-[1000px] mx-auto"
+      aria-labelledby="company-banner"
+    >
       <h2 className="font-inter text-[#7D7F78] tracking-tight leading-6 text-center text-xl font-normal">
         Already chosen by the leaders
       </h2>
-      <div className="flex items-center mt-8 justify-center">
-        <ul className="flex overflow-x-auto gap-6 items-center">
+      <div className="flex items-center pt-8 relative">
+        {/* Shadows */}
+        <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-main to-transparent pointer-events-none z-10" />
+        <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-main to-transparent pointer-events-none z-10" />
+
+        {/* Marquee Content */}
+
+        <motion.ul
+          className="flex gap-6 items-center pr-6"
+          initial={{ x: 0 }}
+          animate={{
+            x: `-50%`,
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        >
           {logos.map((company, index) => (
             <li key={index} className={`max-h-max ${company.size}`}>
               <company.icon className="w-full h-full object-contain" />
             </li>
           ))}
-        </ul>
+
+          {logos.map((company, index) => (
+            <li key={index} className={`max-h-max ${company.size}`}>
+              <company.icon className="w-full h-full object-contain" />
+            </li>
+          ))}
+        </motion.ul>
       </div>
     </section>
   );
