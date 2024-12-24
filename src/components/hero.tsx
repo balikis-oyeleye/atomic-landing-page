@@ -1,12 +1,16 @@
-import { motion } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
 
 const Hero = () => {
+  const { scrollY } = useScroll();
+
+  const y = useTransform(scrollY, [0, 1000], [0, -200]);
+
   return (
     <section
       id="hero"
-      className="px-5 md:px-10 lg:px-[64px] py-0 md:pt-[60px] md:pb-[120px] relative overflow-hidden"
+      className="py-0 md:pt-[60px] md:pb-[120px] relative overflow-hidden"
     >
-      <div className="mt-12 sm:mt-[60px]">
+      <div className="mt-12 sm:mt-[60px] px-5 md:px-10 lg:px-[64px] ">
         <motion.h1
           initial={{ scale: 0, y: 50 }}
           animate={{ scale: 1, y: 0, transition: { duration: 1.2 } }}
@@ -46,12 +50,12 @@ const Hero = () => {
         </motion.form>
       </div>
 
-      <div className="absolute bottom-0 top-0 h-full w-full pointer-events-none z-10 hidden 2xl:block">
+      <div className="absolute bottom-0 top-0 h-full w-full pointer-events-none z-10 hidden 2xl:block px-5 md:px-10 lg:px-[64px] ">
         <div className="bg-dark-shadow h-full"></div>
       </div>
 
       {/* Decorative Images */}
-      <>
+      <div className="px-5 md:px-10 lg:px-[64px] ">
         {/* Nur Praditya */}
         <div className="mt-11 2xl:mt-20 md:flex justify-center hidden">
           <div className="">
@@ -74,6 +78,7 @@ const Hero = () => {
             opacity: 1,
             transition: { duration: 1, delay: 0.4 },
           }}
+          style={{ y }}
           className="absolute bottom-7 left-[30px] rounded-2xl overflow-hidden 2xl:bottom-[100px] 2xl:left-[160px] hidden md:block"
         >
           <img
@@ -93,6 +98,7 @@ const Hero = () => {
             opacity: 1,
             transition: { duration: 1, delay: 0.6 },
           }}
+          style={{ y }}
           className="absolute bottom-7 right-[18px] rounded-2xl overflow-hidden 2xl:bottom-[100px] 2xl:right-[160px] hidden md:block"
         >
           <div className="relative">
@@ -193,11 +199,25 @@ const Hero = () => {
             className="object-contain"
           />
         </motion.div>
-      </>
+      </div>
 
       {/* Slides for tablet screen */}
-      <div className="md:hidden block">
-        <div className="flex py-10 items-center gap-10 overflow-x-auto whitespace-nowrap">
+      <div className="md:hidden py-10 flex items-center relative">
+        <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-main to-transparent pointer-events-none z-10" />
+        <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-main to-transparent pointer-events-none z-10" />
+        <motion.div
+          className="flex gap-10 items-center whitespace-nowrap pr-10 "
+          initial={{ x: 0 }}
+          animate={{
+            x: `-50%`,
+          }}
+          transition={{
+            duration: 15, // Adjust duration for speed
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        >
+          {/* one */}
           <div className="flex justify-center rounded-2xl overflow-hidden min-w-[200px]">
             <img
               src="/assets/images/sugar.png"
@@ -265,7 +285,76 @@ const Hero = () => {
               </p>
             </div>
           </div>
-        </div>
+
+          {/* two */}
+          <div className="flex justify-center rounded-2xl overflow-hidden min-w-[200px]">
+            <img
+              src="/assets/images/sugar.png"
+              alt=""
+              height={250}
+              width={200}
+              className="object-contain"
+            />
+          </div>
+
+          <div className="rounded-2xl overflow-hidden min-w-[256px]">
+            <div className="relative">
+              <img
+                src="/assets/images/nur.png"
+                alt=""
+                className="w-64 h-auto object-contain"
+              />
+              <p className="text-[#7A7A7A] font-inter text-[10px] font-light absolute z-10 top-0 left-3">
+                Nur Praditya
+              </p>
+            </div>
+          </div>
+
+          <div className="flex justify-center min-w-[207px]">
+            <div>
+              <img
+                src="/assets/images/aryan.avif"
+                alt=""
+                height={212}
+                width={207}
+                className="object-contain"
+              />
+              <p className="text-[#7A7A7A] font-inter text-[10px] font-light">
+                Aryan Shah
+              </p>
+            </div>
+          </div>
+
+          <div className="flex justify-center rounded-2xl overflow-hidden min-w-[207px]">
+            <div className="rounded-2xl overflow-hidden relative">
+              <img
+                src="/assets/images/vlad.avif"
+                alt=""
+                height={212}
+                width={207}
+                className="object-contain"
+              />
+              <p className="text-[#7A7A7A] font-inter text-[10px] font-light absolute top-0 left-2">
+                Vlad Muslakov
+              </p>
+            </div>
+          </div>
+
+          <div className="flex justify-center rounded-2xl overflow-hidden min-w-[222px]">
+            <div className="relative">
+              <img
+                src="/assets/images/thomas.png"
+                alt=""
+                height={240}
+                width={222}
+                className="object-contain"
+              />
+              <p className="text-[#7A7A7A] font-inter text-[10px] font-light absolute top-5 left-1">
+                Thomas Cullen
+              </p>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
