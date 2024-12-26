@@ -2,6 +2,7 @@ import Swril from "../icons/swril.svg?react";
 import Box1 from "../icons/box-1.svg?react";
 import Box2 from "../icons/box-2.svg?react";
 import Box3 from "../icons/box-3.svg?react";
+import { motion } from "framer-motion";
 
 const HowItWorks = () => {
   const featuresBox = [
@@ -25,24 +26,66 @@ const HowItWorks = () => {
     },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        when: "beforeChildren",
+      },
+    },
+  };
+
+  const boxVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <section id="how-it-works" className="container pb-[90px] overflow-hidden">
-      <div className="flex items-center justify-center gap-2">
+      <motion.div
+        className="flex items-center justify-center gap-2"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <Swril />
         <h2 className="text-[#DDFF00] font-medium font-inter text-lg">
           How it works
         </h2>
-      </div>
-      <p className="bg-custom-gradient-text text-transparent bg-clip-text text-center font-poppins mt-3 text-2xl md:text-3xl xl:text-[44px] tracking-tight max-w-[788px] mx-auto">
+      </motion.div>
+      <motion.p
+        className="bg-custom-gradient-text text-transparent bg-clip-text text-center font-poppins mt-3 text-2xl md:text-3xl xl:text-[44px] tracking-tight max-w-[788px] mx-auto"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <span className="leading-[120%]">
           Top–notch designs, <br /> delivered at your doorstep.
         </span>
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-14 max-w-[1280px] mx-auto">
+      </motion.p>
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-14 max-w-[1280px] mx-auto"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         {featuresBox.map((feature, index) => (
-          <div
+          <motion.div
             key={index}
             className="w-full bg-custom-box-gradient rounded-[30px] p-10 border  border-[#262626]"
+            variants={boxVariants}
           >
             <div className="w-[98px] h-[98px] bg-[#131313E3] flex justify-center items-center rounded-full border border-[#262626]">
               <feature.image height={45} width={45} />
@@ -55,9 +98,9 @@ const HowItWorks = () => {
                 {feature.description}
               </p>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };
