@@ -1,4 +1,5 @@
 import { FaStar } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const Metrics = () => {
   const socialMetrics = [
@@ -30,6 +31,28 @@ const Metrics = () => {
     { num: "4.8", text: "Review rate" },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        when: "beforeChildren",
+      },
+    },
+  };
+
+  const boxVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <>
       {/* Separator */}
@@ -40,9 +63,19 @@ const Metrics = () => {
         id="metrics"
         className="pb-[90px] mt-24 overflow-hidden container"
       >
-        <div className="flex items-center justify-between md:flex-row flex-col gap-20 pb-24">
+        <motion.div
+          className="flex items-center justify-between md:flex-row flex-col gap-20 pb-24"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {socialMetrics.map((metric, index) => (
-            <div key={index} className="flex items-center flex-col gap-5">
+            <motion.div
+              key={index}
+              className="flex items-center flex-col gap-5"
+              variants={boxVariants}
+            >
               <img
                 src={metric.img}
                 alt={metric.name}
@@ -65,24 +98,34 @@ const Metrics = () => {
                   {metric.role}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Separator */}
         <div className="h-[3px] w-full bg-gradient-to-r from-transparent via-silver/20 to-transparent max-w-[2500px] mx-auto"></div>
 
-        <div className="flex items-center justify-between md:flex-row flex-col gap-10 pt-10">
+        <motion.div
+          className="flex items-center justify-between md:flex-row flex-col gap-10 pt-10"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {numMetrics.map((metric, index) =>
             metric.num ? (
-              <div key={index} className="flex items-center flex-col gap-5">
+              <motion.div
+                key={index}
+                className="flex items-center flex-col gap-5"
+                variants={boxVariants}
+              >
                 <h4 className="bg-custom-gradient-text text-transparent bg-clip-text text-[45px] font-poppins tracking-tighter font-normal">
                   {metric.num}
                 </h4>
                 <p className="text-[#7A7A7A] text-lg font-semibold font-inter">
                   {metric.text}
                 </p>
-              </div>
+              </motion.div>
             ) : (
               <div
                 key={index}
@@ -90,7 +133,7 @@ const Metrics = () => {
               />
             )
           )}
-        </div>
+        </motion.div>
       </section>
     </>
   );
