@@ -1,12 +1,14 @@
 import { GoPlus } from "react-icons/go";
 import Swril from "../icons/swril.svg?react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface FAQsProps {
   faq: {
     question: string;
     answer: string;
   };
+  index: number;
 }
 
 const FAQs = () => {
@@ -43,38 +45,55 @@ const FAQs = () => {
     },
   ];
 
-  const Faq = ({ faq }: FAQsProps) => {
+  const Faq = ({ faq, index }: FAQsProps) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleOpen = () => setIsOpen(!isOpen);
 
+    useEffect(() => {
+      if (index === 0) setIsOpen(true);
+    }, []);
+
     return (
-      <button
-        onClick={toggleOpen}
-        className={`w-full rounded-[30px] p-5 ${
-          isOpen ? "bg-[#161616] mt-4" : ""
-        }`}
+      <motion.div
+        layout
+        className={`w-full  rounded-[30px] ${
+          isOpen ? "mt-4 bg-[#161616]" : ""
+        }  overflow-hidden p-5`}
       >
-        <div className="flex items-center justify-between gap-4">
+        <button
+          onClick={toggleOpen}
+          className="flex items-center justify-between w-full gap-4"
+        >
           <h3 className="font-poppins text-start text-primary text-sm md:text-[22px]">
             {faq.question}
           </h3>
 
-          <GoPlus
-            className={`text-primary ${
-              isOpen ? "rotate-45" : ""
-            } transition-transform duration-300`}
-            size={24}
-          />
-        </div>
-        <p
-          className={`font-inter text-start text-base text-[#7A7A7A] whitespace-pre-wrap ${
-            isOpen ? "pt-4" : "hidden"
-          }`}
-        >
-          {faq.answer}
-        </p>
-      </button>
+          <motion.div
+            animate={{ rotate: isOpen ? 45 : 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <GoPlus className="text-primary" size={24} />
+          </motion.div>
+        </button>
+
+        {/* Animated content */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="overflow-hidden"
+            >
+              <p className="font-inter text-start text-base text-[#7A7A7A] whitespace-pre-wrap pt-4">
+                {faq.answer}
+              </p>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.div>
     );
   };
 
@@ -83,19 +102,37 @@ const FAQs = () => {
       id="faqs"
       className="container md:pt-[90px] pb-[90px] overflow-hidden"
     >
-      <div className="flex items-center justify-center gap-2">
+      <motion.div
+        className="flex items-center justify-center gap-2"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <Swril />
         <h2 className="text-[#DDFF00] font-medium font-inter text-lg">FAQs</h2>
-      </div>
-      <p className="bg-custom-gradient-text text-transparent bg-clip-text text-center font-poppins mt-3 text-2xl md:text-3xl xl:text-[44px] tracking-tight max-w-[788px] mx-auto">
+      </motion.div>
+      <motion.p
+        className="bg-custom-gradient-text text-transparent bg-clip-text text-center font-poppins mt-3 text-2xl md:text-3xl xl:text-[44px] tracking-tight max-w-[788px] mx-auto"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <span className="leading-[120%]">We’ve got the answers</span>
-      </p>
+      </motion.p>
 
-      <div className="grid grid-cols-1 mt-14 max-w-[800px] mx-auto">
+      <motion.div
+        className="grid grid-cols-1 mt-14 max-w-[800px] mx-auto"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         {faqs.map((faq, index) => (
-          <Faq key={index} faq={faq} />
+          <Faq key={index} faq={faq} index={index} />
         ))}
-      </div>
+      </motion.div>
 
       <p className="mt-8 text-[#7A7A7A] text-base text-start md:text-center">
         <span>Still have more questions? Contact our</span>
