@@ -4,6 +4,7 @@ import LatestDesign from "../icons/latest-design.svg?react";
 import LineGraph from "../icons/line-graph.svg?react";
 import SocialMedia from "../icons/social-media.svg?react";
 import EliahIcon from "../icons/eliah.svg?react";
+import { motion } from "framer-motion";
 
 const Features = () => {
   const avatars = [
@@ -37,22 +38,66 @@ const Features = () => {
     "Multilingual support",
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        when: "beforeChildren",
+      },
+    },
+  };
+
+  const boxVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <section id="features" className="container pb-[90px] overflow-hidden">
-      <div className="flex items-center justify-center gap-2">
+      <motion.div
+        className="flex items-center justify-center gap-2"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <Swril />
         <h2 className="text-[#DDFF00] font-medium font-inter text-lg">
           What you'll get
         </h2>
-      </div>
-      <p className="bg-custom-gradient-text text-transparent bg-clip-text text-center font-poppins mt-3 text-2xl md:text-3xl xl:text-[44px] tracking-tight max-w-[788px] mx-auto">
+      </motion.div>
+      <motion.p
+        className="bg-custom-gradient-text text-transparent bg-clip-text text-center font-poppins mt-3 text-2xl md:text-3xl xl:text-[44px] tracking-tight max-w-[788px] mx-auto"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <span className="leading-[120%]">
           We resolve problems associated with creative procedures.
         </span>
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-14 max-w-[1280px] mx-auto">
-        {/*  */}
-        <div className="w-full bg-custom-box-gradient rounded-[30px] pt-2 pb-6  border border-[#262626] overflow-hidden">
+      </motion.p>
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-14 max-w-[1280px] mx-auto"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        {/* first box */}
+        <motion.div
+          className="w-full bg-custom-box-gradient rounded-[30px] pt-2 pb-6  border border-[#262626] overflow-hidden"
+          variants={boxVariants}
+        >
           <div className="xs:w-[280px] h-[211px] mx-auto px-2">
             <Growth className="h-full w-full object-cover" />
           </div>
@@ -64,9 +109,12 @@ const Features = () => {
               Get high-quality design work at a fraction of the cost.
             </p>
           </div>
-        </div>
-        {/*  */}
-        <div className="w-full bg-custom-box-gradient rounded-[30px] pt-2 pb-6   border  border-[#262626] overflow-hidden">
+        </motion.div>
+        {/*second box  */}
+        <motion.div
+          className="w-full bg-custom-box-gradient rounded-[30px] pt-2 pb-6   border  border-[#262626] overflow-hidden"
+          variants={boxVariants}
+        >
           <div className="xs:w-[280px] h-[211px] mx-auto px-2">
             <LatestDesign className="h-full w-full object-contain" />
           </div>
@@ -78,8 +126,12 @@ const Features = () => {
               We've got the expertise to make your vision a reality.
             </p>
           </div>
-        </div>
-        <div className="w-full bg-custom-box-gradient rounded-[30px] border border-[#262626] overflow-hidden">
+        </motion.div>
+        {/* third box */}
+        <motion.div
+          className="w-full bg-custom-box-gradient rounded-[30px] border border-[#262626] overflow-hidden"
+          variants={boxVariants}
+        >
           <div className="w-[280px] h-[211px] mx-auto">
             <LineGraph className="h-full w-full object-contain" />
           </div>
@@ -91,8 +143,8 @@ const Features = () => {
               We’re ready to meet your evolving needs.
             </p>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-[60px] max-w-[1280px] mx-auto">
         <div className="w-full bg-custom-box-gradient rounded-[30px] pt-2 pb-6  sm:p-10 pr-0 xl:flex xl:flex-row-reverse xl:items-center border  border-[#262626]">
